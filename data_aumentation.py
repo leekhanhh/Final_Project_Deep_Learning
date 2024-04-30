@@ -28,8 +28,8 @@ def augment_data(image):
 
 # Path to the directory containing face images
 
-#%%
 dataset_dir = '../final_project/dataset'
+augmentated_dataset = '../final_project/dataset/augmented_dataset'
 # Iterate through each image in the dataset directory
 for filename in os.listdir(dataset_dir):
     if filename.endswith(".jpg"):
@@ -42,7 +42,7 @@ for filename in os.listdir(dataset_dir):
         
         # Save augmented images
         for idx, augmented_image in enumerate(augmented_images):
-            augmented_image_path = os.path.join(dataset_dir, f"{filename.split('.')[0]}_aug_{idx}.jpg")
+            augmented_image_path = os.path.join(augmentated_dataset, f"{filename.split('.')[0]}_aug_{idx}.jpg")
             cv2.imwrite(augmented_image_path, augmented_image)
 
 # %%
